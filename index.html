@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JU-YU KWOK · Teaching Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#8FAF8C;--sage-light:#C8DCC6;--sage-pale:#EEF4ED;
+  --apricot:#E8A87C;--apricot-pale:#FBF0E8;--blush:#E8C4C0;--blush-pale:#FCF5F4;
+  --cream:#FAFAF7;--ink:#3D3530;--stone:#6B6560;--ink-light:#7A716B;
+  --green:#39472F;--border:#E8E2DC;--white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Zen Kaku Gothic New',Arial,sans-serif;line-height:1.72;font-size:17px}
+a{color:inherit}
+.accent{height:4px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;max-width:1080px;margin:26px auto 0;padding:0 28px}
+.accent span:nth-child(1){background:var(--sage)}.accent span:nth-child(2){background:var(--apricot)}.accent span:nth-child(3){background:var(--blush)}
+.shell{max-width:1080px;margin:0 auto;padding:0 28px 72px}
+.topbar{display:flex;justify-content:flex-end;align-items:center;padding:18px 0 15px;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--ink-light);letter-spacing:.04em}
+.hero{padding:48px 0 22px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:3.45rem;line-height:1;margin:0 0 10px;color:var(--green);font-weight:500;letter-spacing:.035em}
+.hero-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.58rem;color:var(--stone);margin:0 0 18px;font-weight:400}
+.hero .summary{max-width:100%;font-size:1.02rem;color:var(--stone);margin:0 0 8px}
+.hero .summary:last-child{margin-bottom:0}
+.section{padding:54px 0 0}
+#teaching-practice{padding-top:16px}
+.section-label{display:flex;align-items:center;gap:12px;font-size:.73rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-light);margin:0 0 24px}
+.section-label:after{content:"";height:1px;background:var(--border);flex:1}
+.case{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:28px}
+.case-head{padding:32px 38px 24px;background:var(--sage-pale);border-bottom:1px solid var(--border)}
+.case-head.apricot{background:var(--apricot-pale)} .case-head.blush{background:var(--blush-pale)}
+.case-number{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:7px}
+.case-head.apricot .case-number{color:#B66F45} .case-head.blush .case-number{color:#A66661}
+.case-title{font-family:'Cormorant Garamond',Georgia,serif;color:var(--green);font-size:2.22rem;line-height:1.1;margin:0 0 6px;font-weight:600}
+.case-role{font-size:.98rem;font-weight:700;margin:0;color:var(--ink)}
+.case-inst{font-size:.93rem;color:var(--stone);margin:2px 0 0}
+.meta{display:grid;grid-template-columns:1.15fr 1.25fr .82fr 1.18fr;gap:0;border-top:1px solid rgba(57,71,47,.12);margin-top:22px}
+.meta div{padding:14px 18px 4px 0;margin-right:18px;border-right:1px solid rgba(57,71,47,.12)}
+.meta div:last-child{border-right:0}
+.meta dt{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ink-light);margin-bottom:4px;white-space:nowrap}
+.meta dd{margin:0;font-size:.91rem;color:var(--ink);line-height:1.45}
+.case-copy{padding:27px 38px 10px}
+.case-copy p{font-size:1rem;color:var(--stone);margin:0 0 11px;max-width:940px}
+.case-copy p:last-child{margin-bottom:0}
+.case-copy strong{color:var(--ink);font-weight:700}
+.carousel{padding:19px 38px 34px}
+.frame{border:1px solid var(--border);border-radius:14px;background:#f4f6f1;overflow:hidden}
+.slide{display:none}.slide.active{display:block}
+.slide img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.caption{background:var(--white);padding:20px 24px 22px;border-top:1px solid var(--border)}
+.caption h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.52rem;line-height:1.18;color:var(--green);margin:0 0 7px;font-weight:600}
+.caption p{font-size:.95rem;color:var(--stone);margin:0;line-height:1.66}
+.controls{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;flex-wrap:wrap}
+.arrow{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--white);font-size:1.3rem;color:var(--green);cursor:pointer;line-height:1}
+.arrow:hover{border-color:var(--sage)}
+.dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#d8d4cf;cursor:pointer}
+.dot.active{background:var(--sage)}
+.counter{font-size:.74rem;color:var(--ink-light);margin-left:7px;min-width:40px}
+.simple-section{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.simple-head{padding:30px 38px 20px;background:var(--blush-pale);border-bottom:1px solid var(--border)}
+.simple-head.materials{background:var(--apricot-pale)}
+.simple-head h2{font-family:'Cormorant Garamond',Georgia,serif;color:var(--green);font-size:2.15rem;line-height:1.15;margin:0 0 10px;font-weight:600}
+.simple-head p{font-size:1rem;color:var(--stone);margin:0;max-width:900px}
+.background-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:24px;padding:32px 38px 36px}
+.background-block h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--green);font-size:1.5rem;margin:0 0 12px}
+.background-block p{margin:0 0 12px;color:var(--stone);font-size:.96rem}
+.credential{padding:10px 0;border-bottom:1px solid var(--border)}
+.credential:last-child{border-bottom:0}
+.credential strong{display:block;color:var(--ink);font-size:.94rem}
+.credential span{display:block;color:var(--stone);font-size:.88rem;margin-top:1px}
+.cv-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 38px 36px;padding:19px 22px;background:var(--sage-pale);border-radius:12px}
+.cv-row p{margin:0;color:var(--stone);font-size:.92rem}
+.cv-link{white-space:nowrap;text-decoration:none;color:var(--green);font-weight:700;border-bottom:1.5px solid var(--sage);padding-bottom:1px}
+.footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:20px;color:var(--ink-light);font-size:.82rem}
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(25,24,22,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:22px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:8px;background:#fff}
+.lightbox-close{position:fixed;top:14px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.25);color:#fff;font-size:1.5rem;cursor:pointer}
+.zoom-note{text-align:center;font-size:.76rem;color:var(--ink-light);margin-top:9px}
+@media(max-width:800px){
+  h1{font-size:2.75rem}.hero-sub{font-size:1.34rem}
+  .meta{grid-template-columns:1fr 1fr}.meta div:nth-child(2){border-right:0}
+  .case-head,.case-copy,.carousel,.simple-head{padding-left:24px;padding-right:24px}
+  .background-grid{grid-template-columns:1fr;padding-left:24px;padding-right:24px}
+  .cv-row{margin-left:24px;margin-right:24px}
+}
+@media(max-width:540px){
+  body{font-size:16px}
+  .accent,.shell{padding-left:18px;padding-right:18px}
+  .topbar{font-size:.78rem}
+  .hero{padding:34px 0 18px}
+  h1{font-size:2.36rem}
+  .hero-sub{font-size:1.24rem;line-height:1.3}
+  .hero .summary{font-size:1rem;line-height:1.68}
+  #teaching-practice{padding-top:12px}
+  .section{padding-top:44px}
+  .section-label{margin-bottom:18px;font-size:.68rem;letter-spacing:.14em}
+  .case-title,.simple-head h2{font-size:1.84rem}
+  .meta{grid-template-columns:1fr}
+  .meta div{border-right:0;border-bottom:1px solid rgba(57,71,47,.1);padding:11px 0;margin:0}
+  .meta div:last-child{border-bottom:0}.meta dt{white-space:normal}
+  .case-head{padding-top:26px}
+  .case-copy{padding-top:21px}
+  .case-copy p,.simple-head p{font-size:1rem}
+  .carousel{padding-top:13px}
+  .caption{padding:17px 18px 19px}
+  .caption h3{font-size:1.34rem}
+  .caption p{font-size:1rem;line-height:1.65}
+  .controls{gap:8px}
+  .dot{width:9px;height:9px}
+  .zoom-note{font-size:.72rem}
+  .background-grid{padding-top:26px}
+  .cv-row{flex-direction:column;align-items:flex-start}
+  .footer{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="accent" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="shell">
+  <div class="topbar"><a href="mailto:tracykwok0709@gmail.com" style="text-decoration:none;">tracykwok0709@gmail.com</a></div>
+
+  <header class="hero">
+    <h1>JU-YU KWOK</h1>
+    <p class="hero-sub">Selected Teaching Practice, Curriculum &amp; Creative Work</p>
+    <p class="summary">Educator and children’s writer with an M.A. in Teaching Chinese as a Second Language and a B.A. in Psychology. My teaching experience spans preschool, primary-age programmes, university learners and online international cohorts in Taiwan, Indonesia and the United States. Earlier work in educational publishing and media has strengthened my skills in curriculum development, visual communication and digital learning, which I now bring into classroom practice.</p>
+    <p class="summary">This portfolio presents selected examples of my teaching practice, student learning, self-developed educational resources and creative work.</p>
+  </header>
+
+  <section class="section" id="teaching-practice">
+    <p class="section-label">Teaching Practice &amp; Classroom Case Studies</p>
+
+    <article class="case">
+      <div class="case-head">
+        <div class="case-number">Case Study 01</div>
+        <h2 class="case-title">Kids Mandarin Summer Camp</h2>
+        <p class="case-role">Mandarin Teacher</p>
+        <p class="case-inst">Chinese Culture University · Division of Continuing Education · Taipei, Taiwan</p>
+        <dl class="meta">
+          <div><dt>Programme</dt><dd>Three-week intensive Mandarin immersion</dd></div>
+          <div><dt>Learners</dt><dd>Multinational beginner students, ages 6–9</dd></div>
+          <div><dt>Class Size</dt><dd>10–12 students</dd></div>
+          <div><dt>Teaching Period</dt><dd>Summers 2023, 2024 &amp; 2026</dd></div>
+        </dl>
+      </div>
+      <div class="case-copy">
+        <p>Designed and delivered three-week intensive Mandarin immersion programmes for multinational beginner learners aged 6–9. The curriculum combined <strong>stories, songs, games, TPR and structured speaking activities</strong> with two culminating projects: a collaborative Book Creator eBook built from a teacher-designed template, through which students contributed original drawings and voice recordings; and an original Mandarin musical showcase integrating storytelling, music and movement.</p>
+        <p>Learning was progressively scaffolded from supported listening and speaking to personal expression, oral retelling and performance. Daily ClassDojo updates and portfolio sharing provided families with ongoing visibility into student learning.</p>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="frame">
+          
+      <article class="slide active">
+        <img class="zoomable" src="assets/images/S1-01.png" alt="Students learning Mandarin through movement, songs, TPR and classroom games">
+        <div class="caption">
+          <h3>Learning through Stories, Songs & Games</h3>
+          <p>Songs, TPR, stories and classroom games provided repeated exposure to new vocabulary and sentence patterns in an immersive learning environment.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-02.png" alt="Students taking part in role-play, turn-and-talk, show-and-tell and classroom speaking activities">
+        <div class="caption">
+          <h3>Structured Opportunities to Speak</h3>
+          <p>Role-play, Turn-and-Talk and Show-and-Tell gave students regular opportunities to use Mandarin for meaningful classroom communication.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-03.png" alt="Story-based learning sequence from shared listening and drawing to teacher conferencing and oral retelling">
+        <div class="caption">
+          <h3>Story Comprehension & Oral Retelling</h3>
+          <p>Students moved from shared story listening to individual drawing, teacher conferencing and oral retelling, with support adjusted to individual language proficiency.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-04.png" alt="Teacher-designed materials, Book Creator project process and students working on a collaborative class eBook">
+        <div class="caption">
+          <h3>Collaborative eBook Project</h3>
+          <p>Using a teacher-designed Book Creator template, students contributed voice recordings and original drawings to a shared class eBook. The project gave beginner learners a clear structure for speaking while also allowing individual creativity through their artwork and the experience of contributing to a collective class product.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-05.png" alt="Examples of differentiated student output in an All About Me Book Creator speaking task">
+        <div class="caption">
+          <h3>Student Work</h3>
+          <p>Students completed a structured “All About Me” speaking task using language learned during the first two weeks of the programme. Using the same Book Creator template, oral output was differentiated according to age and language proficiency, while students added their own drawings to personalise their contribution.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-06.png" alt="Teacher-written performance materials and students moving from language work to rehearsal">
+        <div class="caption">
+          <h3>Scaffolded Performance Project</h3>
+          <p>I scripted each performance around the language level of the class, often using a Mandarin song as the starting point for the story. Students first built understanding through story work, vocabulary and speaking activities, then practised dialogue and songs, retold key parts of the story, and finally performed on stage. The sequence was designed so that performance grew from understanding rather than script memorisation.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S1-07.png" alt="Students performing Mandarin songs, dialogue and original musical showcases across several summer programmes">
+        <div class="caption">
+          <h3>Performance Outcomes across Three Summer Programmes</h3>
+          <p>Final performances formed a recurring learning outcome across the three summer programmes, giving beginner learners a concrete purpose for practising spoken Mandarin and an opportunity to present their learning to an audience.</p>
+        </div>
+      </article>
+        </div>
+        
+      <div class="controls">
+        <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="dot active" type="button" aria-label="Show slide 1"></button><button class="dot" type="button" aria-label="Show slide 2"></button><button class="dot" type="button" aria-label="Show slide 3"></button><button class="dot" type="button" aria-label="Show slide 4"></button><button class="dot" type="button" aria-label="Show slide 5"></button><button class="dot" type="button" aria-label="Show slide 6"></button><button class="dot" type="button" aria-label="Show slide 7"></button>
+        <button class="arrow next" type="button" aria-label="Next slide">›</button>
+        <span class="counter">1 / 7</span>
+      </div>
+        <div class="zoom-note">Click or tap an image to enlarge.</div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-head apricot">
+        <div class="case-number">Case Study 02</div>
+        <h2 class="case-title">Early Years Mandarin at Bina Bangsa School</h2>
+        <p class="case-role">Preschool Mandarin Teacher · MOE Overseas Teacher Programme</p>
+        <p class="case-inst">Bina Bangsa School · Kebon Jeruk Campus · Jakarta, Indonesia</p>
+        <dl class="meta">
+          <div><dt>School Context</dt><dd>Trilingual international school</dd></div>
+          <div><dt>Learners</dt><dd>Pre-Nursery to Kindergarten 2 · Ages 2–6</dd></div>
+          <div><dt>Programme</dt><dd>Thematic Mandarin immersion within the early years curriculum</dd></div>
+          <div><dt>Teaching Period</dt><dd>July 2024 – June 2025</dd></div>
+        </dl>
+      </div>
+      <div class="case-copy">
+        <p>Delivered thematic Mandarin learning experiences for children from Pre-Nursery to Kindergarten 2 within a trilingual international school. Lessons combined stories, songs, movement, TPR, games, visual materials and hands-on activities to support participation across different developmental stages.</p>
+        <p>My role extended beyond regular classroom teaching. I planned and led a school-wide Mid-Autumn Festival Open Day, led a cross-border online cultural exchange with a preschool in Taiwan, and contributed to a cross-disciplinary Student-Led Conference involving families. The experience strengthened my understanding of early childhood communication, classroom routines, family engagement and collaborative planning.</p>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="frame">
+          
+      <article class="slide active">
+        <img class="zoomable" src="assets/images/S2-01.png" alt="Preschool Mandarin learning through role-play, puppets, stories and hands-on activities">
+        <div class="caption">
+          <h3>Learning through Play</h3>
+          <p>Stories, songs, movement, TPR, role-play and hands-on activities helped young children connect new Mandarin with actions, images and familiar classroom experiences.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S2-02.png" alt="Mid-Autumn Festival classroom and stage activities with preschool learners">
+        <div class="caption">
+          <h3>Mid-Autumn Festival Open Day</h3>
+          <p>Planned and led the school-wide Mid-Autumn Festival Open Day for 200+ parents, coordinating interactive station games, logistics and student cultural performances with other teachers.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S2-03.png" alt="Chinese New Year preschool performances, greetings and family dumpling-making activities">
+        <div class="caption">
+          <h3>Chinese New Year Culture Week & Open Day</h3>
+          <p>Worked with the Mandarin teaching team on the school’s Chinese New Year Open Day. I coordinated the preschool performance programme, helped prepare the main stage, and provided teaching resources for the preschool’s week-long Chinese culture theme. Families joined the celebration through New Year greetings, dumpling making and other cultural activities.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S2-04.png" alt="Online cultural exchange between preschool children in Indonesia and Taiwan">
+        <div class="caption">
+          <h3>Cross-Border Cultural Exchange</h3>
+          <p>Led a cross-border online cultural exchange programme with a preschool in Taiwan, coordinating directly with the partner teacher and managing the programme from planning through implementation.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S2-05.png" alt="Zoo-themed station designed for a cross-disciplinary Student-Led Conference">
+        <div class="caption">
+          <h3>Student-Led Conference: Zoo Station</h3>
+          <p>As part of a cross-disciplinary Student-Led Conference designed as a simulated trip to China, I created the zoo station, where children helped family members locate missing animals using Mandarin. I also designed a simple Tic-Tac-Toe extension activity for families to use while waiting between stations.</p>
+        </div>
+      </article>
+        </div>
+        
+      <div class="controls">
+        <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="dot active" type="button" aria-label="Show slide 1"></button><button class="dot" type="button" aria-label="Show slide 2"></button><button class="dot" type="button" aria-label="Show slide 3"></button><button class="dot" type="button" aria-label="Show slide 4"></button><button class="dot" type="button" aria-label="Show slide 5"></button>
+        <button class="arrow next" type="button" aria-label="Next slide">›</button>
+        <span class="counter">1 / 5</span>
+      </div>
+        <div class="zoom-note">Click or tap an image to enlarge.</div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="materials">
+    <p class="section-label">Learning Materials &amp; Educational Media</p>
+    <div class="simple-section">
+      <div class="simple-head materials">
+        <h2>Learning Materials &amp; Educational Media</h2>
+        <p>I create and adapt visual and digital materials to support clear learning goals, guided practice and student participation. The examples below include Canva worksheets and lesson slides, Book Creator templates, and interactive practice using digital games and teacher-edited video.</p>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="frame">
+          
+      <article class="slide active">
+        <img class="zoomable" src="assets/images/S3-01.png" alt="Examples of teacher-created Canva worksheets for Mandarin learning">
+        <div class="caption">
+          <h3>Canva Worksheets</h3>
+          <p>Teacher-created worksheets include drawing, cut-and-paste, character recognition and short written tasks, each designed around a clear language goal.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S3-02.png" alt="Examples of teacher-created Canva lesson slides for classroom instruction">
+        <div class="caption">
+          <h3>Canva Lesson Slides</h3>
+          <p>Visual lesson slides use images, prompts and sequencing to introduce language, support comprehension and structure guided classroom interaction.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S3-03.png" alt="Teacher-designed Book Creator eBook template and completed project example">
+        <div class="caption">
+          <h3>Book Creator Templates</h3>
+          <p>Teacher-designed templates give students a clear structure for speaking and recording while leaving room for personal drawings and individual responses.</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S3-04.png" alt="Wordwall, Blooket and teacher-edited movement video used for interactive practice">
+        <div class="caption">
+          <h3>Gamification & Multimedia Practice</h3>
+          <p>Wordwall and Blooket were used for retrieval practice and whole-class review, while teacher-edited movement videos provided visual models for songs and performance rehearsal.</p>
+        </div>
+      </article>
+        </div>
+        
+      <div class="controls">
+        <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="dot active" type="button" aria-label="Show slide 1"></button><button class="dot" type="button" aria-label="Show slide 2"></button><button class="dot" type="button" aria-label="Show slide 3"></button><button class="dot" type="button" aria-label="Show slide 4"></button>
+        <button class="arrow next" type="button" aria-label="Next slide">›</button>
+        <span class="counter">1 / 4</span>
+      </div>
+        <div class="zoom-note">Click or tap an image to enlarge.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="writing">
+    <p class="section-label">Creative Writing Awards &amp; Publications</p>
+    <div class="simple-section">
+      <div class="simple-head">
+        <h2>Creative Writing Awards &amp; Publications</h2>
+        <p>I have always been drawn to children’s literature and animation, particularly stories that preserve a sense of curiosity, imagination and a child’s point of view. Writing has remained a personal interest alongside my professional work, and several of my stories have received literary awards or been published. Storytelling also finds its way naturally into my teaching, where I use narrative to give language a meaningful context for listening, speaking, creating and performing.</p>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="frame">
+          
+      <article class="slide active">
+        <img class="zoomable" src="assets/images/S04-01.png" alt="Ju-Yu Kwok with selected children’s literature awards and honours">
+        <div class="caption">
+          <h3>Selected Awards & Honours</h3>
+          <p>Judge’s Award in Children’s Stories, Chung Chao-cheng Literary Award (2023); Annual Recommended Children’s Story Award, Chiu Ko Publishing (2022); Award of Excellence, MDN Children’s Literature Award / Mudi Award (2022); Potential Award in Children’s Stories, Chung Chao-cheng Literary Award (2022); Second Prize in Children’s Literature, Wu Chuo-liu Literary Award (2021); Finalist, Excellent Screenplay Award Taiwan, Ministry of Culture (2020).</p>
+        </div>
+      </article>
+
+      <article class="slide">
+        <img class="zoomable" src="assets/images/S4-02.png" alt="Published books and selected children&#x27;s literature anthologies">
+        <div class="caption">
+          <h3>Published Books & Selected Anthologies</h3>
+          <p>Author, <em>The Little Postman above the Clouds</em>, Bookman Books, 2020<br>
+     Author, <em>The Wandering Islands</em>, DreamKeeper Publishing, 2021<br>
+     Contributing Author, “The Last Friend”, in <em>Chiu Ko Anthology of Children’s Stories 2021</em>, Chiu Ko Publishing, 2022<br>
+     Contributing Author, “The Pigeon”, in <em>The Slow Pomegranate: 21st Mudi Award Masterpieces</em>, Mandarin Daily News Publishing, 2022</p>
+        </div>
+      </article>
+        </div>
+        
+      <div class="controls">
+        <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="dot active" type="button" aria-label="Show slide 1"></button><button class="dot" type="button" aria-label="Show slide 2"></button>
+        <button class="arrow next" type="button" aria-label="Next slide">›</button>
+        <span class="counter">1 / 2</span>
+      </div>
+        <div class="zoom-note">Click or tap an image to enlarge.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="background">
+    <p class="section-label">Professional Background</p>
+    <div class="simple-section">
+      <div class="background-grid">
+        <div class="background-block">
+          <h3>Education</h3>
+          <div class="credential"><strong>M.A. in Teaching Chinese as a Second Language</strong><span>National Taiwan Normal University</span></div>
+          <div class="credential"><strong>B.A. in Psychology</strong><span>The University of Auckland</span></div>
+          <h3 style="margin-top:28px;">Earlier Educational Content Experience</h3>
+          <p>Textbook publishing · Online course development · Educational animation and multimedia production</p>
+        </div>
+        <div class="background-block">
+          <h3>Selected Teaching Experience</h3>
+          <div class="credential"><strong>Mandarin Teacher · Kids Mandarin Summer Camp</strong><span>Chinese Culture University · 2023, 2024 &amp; 2026</span></div>
+          <div class="credential"><strong>Full-time Chinese Language Instructor</strong><span>National Chi Nan University · 2025–2026</span></div>
+          <div class="credential"><strong>Preschool Mandarin Teacher · MOE Overseas Teacher Programme</strong><span>Bina Bangsa School, Indonesia · 2024–2025</span></div>
+          <div class="credential"><strong>Online Mandarin Teacher</strong><span>National Taiwan Normal University · 2024</span></div>
+          <div class="credential"><strong>Intern Teacher</strong><span>Wellesley College, United States · 1997–1998</span></div>
+          <div class="credential"><strong>Mandarin Teacher</strong><span>NTNU Mandarin Training Center · 1996–1999</span></div>
+        </div>
+      </div>
+      <div class="cv-row">
+        <p>For a complete record of education, teaching, media and publishing experience, see the full curriculum vitae.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Ju-Yu Kwok · Teaching Portfolio</span>
+    <a href="mailto:tracykwok0709@gmail.com" style="text-decoration:none;">tracykwok0709@gmail.com</a>
+  </footer>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged portfolio image">
+  <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+  <img src="" alt="">
+</div>
+
+<script>
+for (const carousel of document.querySelectorAll('[data-carousel]')) {
+  const slides=[...carousel.querySelectorAll('.slide')];
+  const dots=[...carousel.querySelectorAll('.dot')];
+  const counter=carousel.querySelector('.counter');
+  let i=0, startX=null;
+
+  function show(n) {
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,j)=>s.classList.toggle('active',j===i));
+    dots.forEach((d,j)=>d.classList.toggle('active',j===i));
+    counter.textContent=`${i+1} / ${slides.length}`;
+  }
+
+  carousel.querySelector('.prev').addEventListener('click',()=>show(i-1));
+  carousel.querySelector('.next').addEventListener('click',()=>show(i+1));
+  dots.forEach((d,j)=>d.addEventListener('click',()=>show(j)));
+
+  const frame=carousel.querySelector('.frame');
+  frame.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; },{passive:true});
+  frame.addEventListener('touchend',e=>{
+    if(startX===null) return;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>45) show(i+(dx<0?1:-1));
+    startX=null;
+  },{passive:true});
+}
+
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=lightbox.querySelector('img');
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightboxImg.src='';
+}
+document.querySelectorAll('.zoomable').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src=img.src;
+    lightboxImg.alt=img.alt;
+    lightbox.classList.add('open');
+  });
+});
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox || e.target.classList.contains('lightbox-close')) closeLightbox(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
+</script>
+</body>
+</html>
